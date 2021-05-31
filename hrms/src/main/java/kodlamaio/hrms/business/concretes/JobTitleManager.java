@@ -54,4 +54,12 @@ private JobTitleDao jobtitleDao;
 		
 	}
 
+
+	@Override
+	public DataResult<JobTitle> getJobTitleById(int jobTitleId) {
+		
+		return new SuccessDataResult<JobTitle>(this.jobtitleDao.getOne(jobTitleId));
+		
+	}
+
 }
