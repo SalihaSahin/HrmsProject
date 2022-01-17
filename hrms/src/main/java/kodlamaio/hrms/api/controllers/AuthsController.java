@@ -27,7 +27,7 @@ import kodlamaio.hrms.entities.dtos.RegisterForEmployerDto;
 @RequestMapping("api/auth")
 public class AuthsController {
 	private AuthService authService;
-
+ 
 	@Autowired
 	public AuthsController(AuthService authService) {
 		super();
