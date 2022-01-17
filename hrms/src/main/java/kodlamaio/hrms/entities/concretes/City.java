@@ -12,7 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -33,19 +36,23 @@ public class City {
 	private int id;
 	
 	@Column(name="name")
+	@NotBlank
+	@NotNull
 	private String name;
 		
-	@Column(name="created_date",columnDefinition = "Date default CURRENT_DATE")
+	@Column(name="created_date")
+	@JsonIgnore
 	private LocalDate createdDate=LocalDate.now();
 	
 	@Column(name="is_deleted",columnDefinition = "boolean default false")
+	@JsonIgnore
 	private Boolean isDeleted=false;
 	
 	@Column(name="is_opened")
 	private Boolean isOpened;
 	
 	// relational properties
-	
+	@JsonIgnore
 	@OneToMany(mappedBy="city")
 	private List<JobAdvertisement> jobAdvertisements;
 	

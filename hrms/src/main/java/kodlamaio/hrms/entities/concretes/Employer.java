@@ -4,11 +4,16 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.Nullable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,26 +25,42 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="employers")
-@PrimaryKeyJoinColumn(name="user_id",referencedColumnName = "id")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
+@PrimaryKeyJoinColumn(name="id",referencedColumnName = "id")
+
 @EqualsAndHashCode(callSuper=false) 
-public class Employer extends User{
-	
+public class Employer extends User {
+    
+	@NotBlank
+	@NotNull
 	@Column(name="web_site")
 	private String webSite;
 	
+	@NotBlank
+	@NotNull
 	@Column(name="phone_number")
 	private String phoneNumber;
 	
-	@Column(name="is_email_verfied")
+	
+	@NotBlank
+	@NotNull
+    @Column(name="company_name")
+    private String companyName;
+    
+	@JsonIgnore
+	@Nullable
+    @Column(name="is_email_verified",columnDefinition = "boolean default false")
 	private Boolean isEmailVerified;
-	
-	@Column(name="is_verfied_by_employee")
-	private Boolean is_verfied_by_employee;
-	
-	@Column(name="company_name")
-	private String companyName;
+    
+	@Nullable
+	@JsonIgnore
+    @Column(name="is_verified_by_emlopyee",columnDefinition = "boolean default false")
+	private Boolean isVerifiedByEmlopyee;
 
-	 @OneToMany(mappedBy="employer")
+    
+    
+    // relational properties
+    
+     @JsonIgnore
+     @OneToMany(mappedBy="employer")
      private List<JobAdvertisement> jobAdvertisements;
 }

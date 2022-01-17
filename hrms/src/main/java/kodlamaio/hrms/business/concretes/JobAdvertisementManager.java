@@ -21,7 +21,6 @@ import kodlamaio.hrms.entities.dtos.JobAdvertisementDto;
 @Service("JobAdvertisementManager")
 public class JobAdvertisementManager implements JobAdvertisementService{
 
-	
 	private JobAdvertisementDao jobAdvertisementDao;
 	private ModelMapper modelMapper;
 
@@ -42,34 +41,29 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	}
 	
 	
-	// teşekkürler yakup :)
-	
 	@Override
-	public DataResult<List<JobAdvertisementDto>> getByIsActive() {
-		return new SuccessDataResult <List<JobAdvertisementDto>>(this.dtoGenerator(this.jobAdvertisementDao.getByIsActive()),"All active advertisement listed !");
+	public DataResult<List<JobAdvertisement>> getByIsActive() {
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findByIsActive(),"All active advertisement listed !");
 		
 	}
 
 	
 	@Override
-	public DataResult<List<JobAdvertisementDto>> getAllSortedByReleaseDate() {
+	public DataResult<List<JobAdvertisement>> getAllSortedByReleaseDate() {
 	
 		Sort sort = Sort.by(Sort.Direction.DESC,"appealDeadline");
 				
-		return new SuccessDataResult<List<JobAdvertisementDto>>(this.dtoGenerator(this.jobAdvertisementDao.findAll(sort)));
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort));
 		
 	}
 	
 
 	@Override
-	public DataResult<List<JobAdvertisementDto>> getAllByEmployerId(int employerId) {
-		
-		return new SuccessDataResult<List<JobAdvertisementDto>>(this.dtoGenerator(this.jobAdvertisementDao.getEmployer_IdAndIsOpenedTrue(employerId)));
+	public DataResult<List<JobAdvertisement>>getAllByEmployerId(int employerId) {
+		 
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findByEmployer_IdAndIsOpenedTrue(employerId));
 	}
-	
-	
-
-	
+		
 	@Override
 	public Result update(JobAdvertisement jobAdvertisement) {
 		
@@ -77,25 +71,20 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 		return new SuccessResult("Job Advertisement updated !");
 	}
 	
-	
-	private List<JobAdvertisementDto> dtoGenerator(List<JobAdvertisement> advertisement){
-		List<JobAdvertisementDto> jobAdvertisementDtos= new ArrayList<JobAdvertisementDto>(); 
-		advertisement.forEach(item -> {
-			JobAdvertisementDto dto=modelMapper.map(item, JobAdvertisementDto.class);
-			dto.setCompanyName(item.getEmployer().getCompanyName());
-			jobAdvertisementDtos.add(dto);
-		});
-		return jobAdvertisementDtos;
-	
+	@Override
+	public Result delete(JobAdvertisement jobAdvertisement) {
+ 
+		this.jobAdvertisementDao.delete(jobAdvertisement);
+
+		return new SuccessResult("Job Advertisement deleted !");
 	}
 
-	
 
 	@Override
 	public Result toggleActive(int jobId) {
 		
-		JobAdvertisement jobAdvertisement = this.jobAdvertisementDao.getById(jobId);
-		if(!IsJobAdvertisementExists(jobAdvertisement)) {
+		JobAdvertisement jobAdvertisement = this.jobAdvertisementDao.findById(jobId);
+		if(!isJobAdvertisementExists(jobAdvertisement)) {
 			
 			return new ErrorResult("Job Advertisement doesn't exists");
 
@@ -106,13 +95,43 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 		return new SuccessResult("Toggled") ;
 	}
 	
+	@Override
+	public Result toggleVerifiedByEmployee(int jobId) {
+		
+		JobAdvertisement jobAdvertisement = this.jobAdvertisementDao.findById(jobId);
+		if(!isJobAdvertisementExists(jobAdvertisement)) {
+			
+			return new ErrorResult("Job Advertisement doesn't exists");
+
+		}
+		
+		jobAdvertisement.setIsVerifiedByEmployee(true);
+		this.jobAdvertisementDao.save(jobAdvertisement);
+		return new SuccessResult("Verified by Employee");
+	}
+
+    
 	
-	private boolean IsJobAdvertisementExists(JobAdvertisement jobAdvertisement) {
+	
+	private boolean isJobAdvertisementExists(JobAdvertisement jobAdvertisement) {
 		
 		if(jobAdvertisement == null) {
 			return false;
 		}
 		return true;
+	}
+	
+	
+	// mapping system is disabled.
+	private List<JobAdvertisementDto> dtoGenerator(List<JobAdvertisement> advertisement){
+		List<JobAdvertisementDto> jobAdvertisementDtos= new ArrayList<JobAdvertisementDto>(); 
+		advertisement.forEach(item -> {
+			JobAdvertisementDto dto=modelMapper.map(item, JobAdvertisementDto.class);
+			dto.setCompanyName(item.getEmployer().getCompanyName());
+			jobAdvertisementDtos.add(dto);
+		});
+		return jobAdvertisementDtos;
+	
 	}
 	
 }

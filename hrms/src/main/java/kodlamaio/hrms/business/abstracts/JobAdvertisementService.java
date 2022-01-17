@@ -9,16 +9,23 @@ import kodlamaio.hrms.entities.dtos.JobAdvertisementDto;
 
 public interface JobAdvertisementService{
 	
-	Result add(JobAdvertisement jobAdvertisement);
-	
-	DataResult<List<JobAdvertisementDto>> getByIsActive();
-	
-	DataResult<List<JobAdvertisementDto>> getAllSortedByReleaseDate();
 
-	DataResult<List<JobAdvertisementDto>> getAllByEmployerId(int employerId);
-	
-	Result update(JobAdvertisement jobAdvertisement);
+
+	DataResult<List<JobAdvertisement>> getByIsActive();
+
+	DataResult<List<JobAdvertisement>> getAllSortedByReleaseDate();
+
+	DataResult<List<JobAdvertisement>> getAllByEmployerId(int employerId);
 	
 	Result toggleActive(int jobId);
 	
+	Result toggleVerifiedByEmployee(int jobId);
+	
+	Result add(JobAdvertisement jobAdvertisement);
+	
+	Result update(JobAdvertisement jobAdvertisement);
+	
+	Result delete(JobAdvertisement jobAdvertisement);
 }
+	
+

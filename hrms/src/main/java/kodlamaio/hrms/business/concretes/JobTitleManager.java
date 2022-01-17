@@ -17,7 +17,6 @@ import kodlamaio.hrms.entities.concretes.JobTitle;
 @Service("JobTitleManager")
 public class JobTitleManager implements JobTitleService{
 
-	
 private JobTitleDao jobtitleDao;
 	
     @Autowired
@@ -57,9 +56,22 @@ private JobTitleDao jobtitleDao;
 
 	@Override
 	public DataResult<JobTitle> getJobTitleById(int jobTitleId) {
+	
 		
 		return new SuccessDataResult<JobTitle>(this.jobtitleDao.getOne(jobTitleId));
-		
 	}
 
+
+	@Override
+	public Result update(JobTitle jobTitle) {
+		this.jobtitleDao.save(jobTitle);
+		return new SuccessResult("JobTitle updated !");
+	}
+
+
+	@Override
+	public Result delete(JobTitle jobTitle) {
+		this.jobtitleDao.delete(jobTitle);
+		return new SuccessResult("JobTitle deleted !");
+	}
 }

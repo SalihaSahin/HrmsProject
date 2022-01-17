@@ -31,6 +31,7 @@ public class VerificationCodeManager implements VerificationCodeService {
 	@Override
 	public DataResult<VerificationCode> getByUserIdAndVerificationCode(int userId, String verificationCode) {
 		
+		
 		return new SuccessDataResult<VerificationCode>(this.verificationCodeDao.findByUserIdAndVerificationCode(userId, verificationCode));
 	}
 
@@ -39,5 +40,4 @@ public class VerificationCodeManager implements VerificationCodeService {
 		this.verificationCodeDao.save(code);
 		return new SuccessResult("Code updated !");
 	}
-	
 }
