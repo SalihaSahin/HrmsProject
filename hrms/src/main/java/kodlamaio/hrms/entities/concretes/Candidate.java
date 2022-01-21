@@ -22,7 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
+@Data 
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -101,3 +101,4 @@ public class Candidate extends User {
 	@OneToOne(mappedBy="candidate",optional=true, fetch=FetchType.LAZY)
 	private Image image;
 }
+  

@@ -20,7 +20,7 @@ import kodlamaio.hrms.entities.dtos.CandidateCvDto;
 @RestController
 @CrossOrigin 
 @RequestMapping("api/candidates")
-public class CandidatesController {  
+public class CandidatesController {    
 
 	private CandidateService candidateService;
 

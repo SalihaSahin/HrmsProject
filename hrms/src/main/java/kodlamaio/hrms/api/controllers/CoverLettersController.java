@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.business.abstracts.CoverLetterService;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.CoverLetter;
-
+  
 @RestController
 @CrossOrigin
 @RequestMapping("api/coverLettes")

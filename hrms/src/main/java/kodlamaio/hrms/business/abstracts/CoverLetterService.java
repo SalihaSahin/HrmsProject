@@ -16,3 +16,4 @@ public interface CoverLetterService {
 	
 	Result delete(CoverLetter coverLetter);
 }
+    

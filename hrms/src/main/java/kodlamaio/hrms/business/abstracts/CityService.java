@@ -18,3 +18,4 @@ public interface CityService {
 	
 	Result delete(City city);
 }
+  

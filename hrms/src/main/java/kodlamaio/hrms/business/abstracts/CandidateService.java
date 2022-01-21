@@ -16,7 +16,7 @@ public interface CandidateService {
 	DataResult<List<Candidate>> getAll();
 	
 	DataResult<Candidate> getById(int candidateId);
-	
+	  
 	DataResult<CandidateCvDto> getDtoById(int candidateId);
 	
 	Result add(Candidate candidate);
@@ -25,3 +25,4 @@ public interface CandidateService {
 	
 	Result delete(Candidate candidate);
 }
+  

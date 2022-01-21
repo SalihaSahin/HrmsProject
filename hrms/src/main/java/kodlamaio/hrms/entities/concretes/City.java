@@ -57,4 +57,4 @@ public class City {
 	private List<JobAdvertisement> jobAdvertisements;
 	
 	
-}
+}  
