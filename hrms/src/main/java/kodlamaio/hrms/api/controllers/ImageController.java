@@ -26,7 +26,7 @@ public class ImageController {
 	
 	private ImageService imageService;
 	private CandidateService candidateService;
-	
+	  
 	@Autowired
 	public ImageController(ImageService imageService, CandidateService candidateService) {
 		super();

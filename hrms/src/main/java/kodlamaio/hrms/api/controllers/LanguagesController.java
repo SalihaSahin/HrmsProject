@@ -28,7 +28,7 @@ public class LanguagesController {
 		super();
 		this.languageService = languageService;
 	}
-	
+	 
 	
 	@PostMapping("/add")
 	public Result add(@RequestBody Language language) {

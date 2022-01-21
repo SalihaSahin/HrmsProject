@@ -21,7 +21,7 @@ import kodlamaio.hrms.entities.concretes.Employee;
 @CrossOrigin
 public class EmployeesController {
 	private EmployeeService employeeService;
-
+ 
 	@Autowired
 	public EmployeesController(EmployeeService employeService) {
 		super();

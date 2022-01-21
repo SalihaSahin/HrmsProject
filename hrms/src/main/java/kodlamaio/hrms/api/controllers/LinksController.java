@@ -29,7 +29,7 @@ public class LinksController {
 	@PostMapping("/add")
 	public Result add(@RequestBody Link link) {
 		return this.linkService.add(link);
-	}
+	} 
 	
 	// TODO test edilmedi
 	

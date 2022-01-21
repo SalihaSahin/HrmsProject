@@ -22,7 +22,7 @@ import kodlamaio.hrms.entities.concretes.Employer;
 public class EmployersController {
 	
 	private EmployerService employerService;
-
+ 
 	@Autowired
 	public EmployersController(EmployerService employerService) {
 		super();

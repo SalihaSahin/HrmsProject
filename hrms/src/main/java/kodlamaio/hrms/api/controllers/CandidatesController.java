@@ -18,7 +18,7 @@ import kodlamaio.hrms.entities.concretes.Candidate;
 import kodlamaio.hrms.entities.dtos.CandidateCvDto;
 
 @RestController
-@CrossOrigin
+@CrossOrigin 
 @RequestMapping("api/candidates")
 public class CandidatesController {
 

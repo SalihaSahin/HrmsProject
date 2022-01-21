@@ -14,7 +14,7 @@ import kodlamaio.hrms.entities.concretes.Skill;
 @RestController
 @CrossOrigin
 @RequestMapping("api/skills")
-public class SkillsController {
+public class SkillsController { 
 
 	private SkillService skillService;
 

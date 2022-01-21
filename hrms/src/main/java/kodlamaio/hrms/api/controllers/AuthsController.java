@@ -23,7 +23,7 @@ import kodlamaio.hrms.entities.dtos.RegisterForCandidateDto;
 import kodlamaio.hrms.entities.dtos.RegisterForEmployerDto;
 
 @RestController
-@CrossOrigin
+@CrossOrigin 
 @RequestMapping("api/auth")
 public class AuthsController {
 	private AuthService authService;

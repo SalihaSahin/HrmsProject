@@ -30,7 +30,7 @@ public class JobAdvertisementController {
 		this.jobAdvertisementService = jobAdvertisementService;
 	}
 	
-
+ 
 
 	
 	@PostMapping("/add")

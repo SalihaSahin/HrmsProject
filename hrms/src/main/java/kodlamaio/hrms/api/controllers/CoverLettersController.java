@@ -18,7 +18,7 @@ public class CoverLettersController {
 
 	private CoverLetterService coverLetterService;
 
-	@Autowired
+	@Autowired 
 	public CoverLettersController(CoverLetterService coverLetterService) {
 		super();
 		this.coverLetterService = coverLetterService;

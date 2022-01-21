@@ -28,7 +28,7 @@ public class JobTitlesController {
 		super();
 		this.jobTitleService = jobTitleService;
 	}
-	
+	 
 
 	@GetMapping("/getall")
 	

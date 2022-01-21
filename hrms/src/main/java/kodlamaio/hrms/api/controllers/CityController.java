@@ -18,7 +18,7 @@ import kodlamaio.hrms.entities.concretes.City;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/cities")
+@RequestMapping("api/cities") 
 
 public class CityController {
 
