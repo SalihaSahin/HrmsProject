@@ -26,7 +26,7 @@ public class SkillManager implements SkillService {
 	}
 
 	@Override
-	public Result add(Skill skill) {
+	public Result add(Skill skill) { 
 		this.skillDao.save(skill);
 		return new SuccessResult("Skill added!");
 	}

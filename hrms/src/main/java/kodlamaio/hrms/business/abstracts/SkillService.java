@@ -16,3 +16,4 @@ public interface SkillService {
 	
 	DataResult<List<Skill>> getAllByCandidateId(int candidateId);
 }
+ 

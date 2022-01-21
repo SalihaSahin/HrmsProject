@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\hrms",
+    "\\hrms\\src",
+    "\\hrms\\src\\main",
+    "\\hrms\\src\\main\\java",
+    "\\hrms\\src\\main\\java\\kodlamaio",
+    "\\hrms\\src\\main\\java\\kodlamaio\\hrms",
+    "\\hrms\\src\\main\\java\\kodlamaio\\hrms\\dataAccess",
+    "\\hrms\\src\\main\\java\\kodlamaio\\hrms\\entities",
+    "\\hrms\\src\\main\\java\\kodlamaio\\hrms\\entities\\concretes"
+  ],
+  "SelectedNode": "\\hrms\\src\\main\\java\\kodlamaio\\hrms\\entities\\concretes\\City.java",
+  "PreviewInSolutionExplorer": false
+}

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.business.abstracts.SkillService;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Skill;
-
+ 
 @RestController
 @CrossOrigin
 @RequestMapping("api/skills")
