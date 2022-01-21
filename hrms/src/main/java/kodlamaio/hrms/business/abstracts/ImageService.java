@@ -17,7 +17,7 @@ public interface ImageService {
 	DataResult<Image> getById(int id);
 	
 	Result add(Image image,  MultipartFile imageFile);
-	
+	 
 	Result update(Image image);
 	
 	Result delete(Image image);

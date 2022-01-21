@@ -10,3 +10,4 @@ public interface ImageDao extends JpaRepository<Image, Integer> {
 	
 	Image findById(int id);
 }
+ 

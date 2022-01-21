@@ -19,7 +19,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import kodlamaio.hrms.entities.concretes.Image;
 
-@RestController
+@RestController 
 @RequestMapping("/api/images")
 @CrossOrigin
 public class ImageController {

@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="images")
-@AllArgsConstructor
+@AllArgsConstructor 
 @NoArgsConstructor
 public class Image {
 	

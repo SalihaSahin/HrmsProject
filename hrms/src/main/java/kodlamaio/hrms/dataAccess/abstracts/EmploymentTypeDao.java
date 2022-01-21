@@ -7,3 +7,4 @@ import kodlamaio.hrms.entities.concretes.EmploymentType;
 public interface EmploymentTypeDao  extends JpaRepository<EmploymentType, Integer>{
 
 }
+ 

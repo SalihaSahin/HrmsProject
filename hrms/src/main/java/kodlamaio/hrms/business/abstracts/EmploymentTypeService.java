@@ -10,3 +10,4 @@ public interface EmploymentTypeService {
 	Result add(EmploymentType employmentType);
 	DataResult<List<EmploymentType>> getAll();
 }
+ 

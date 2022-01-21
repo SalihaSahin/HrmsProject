@@ -1,4 +1,4 @@
-package kodlamaio.hrms.api.controllers;
+ package kodlamaio.hrms.api.controllers;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import kodlamaio.hrms.entities.concretes.EmploymentType;
 @RestController
 
 @RequestMapping("api/employmentTypes")
-@CrossOrigin
+@CrossOrigin 
 public class EmploymentTypeController {
 	
 	private EmploymentTypeService employmentService;

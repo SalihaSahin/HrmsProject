@@ -17,7 +17,7 @@ import com.sun.istack.Nullable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode; 
 import lombok.NoArgsConstructor;
 
 @Data
