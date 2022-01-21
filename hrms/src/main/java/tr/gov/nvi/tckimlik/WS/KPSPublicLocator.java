@@ -19,7 +19,7 @@ public class KPSPublicLocator extends org.apache.axis.client.Service implements 
 
     public KPSPublicLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
-    }
+    } 
 
     // Use to get a proxy class for KPSPublicSoap
     private java.lang.String KPSPublicSoap_address = "https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx";

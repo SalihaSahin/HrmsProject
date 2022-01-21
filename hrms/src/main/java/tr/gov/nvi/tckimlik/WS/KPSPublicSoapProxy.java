@@ -11,7 +11,7 @@ public class KPSPublicSoapProxy implements tr.gov.nvi.tckimlik.WS.KPSPublicSoap 
   public KPSPublicSoapProxy(String endpoint) {
     _endpoint = endpoint;
     _initKPSPublicSoapProxy();
-  }
+  } 
   
   private void _initKPSPublicSoapProxy() {
     try {

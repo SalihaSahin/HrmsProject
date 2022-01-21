@@ -14,3 +14,4 @@ public interface KPSPublic extends javax.xml.rpc.Service {
 
     public tr.gov.nvi.tckimlik.WS.KPSPublicSoap getKPSPublicSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }
+ 
